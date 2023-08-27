@@ -32,7 +32,7 @@ p {
     margin-bottom: 0;
 }
 
-a {
+a, img {
     display: block;
 }
 
@@ -158,7 +158,7 @@ a {
 
 .contacts {
     display: flex;
-    gap: 50px;
+    gap: 40px;
 }
 
 .contacts .contacts-text {
@@ -174,14 +174,13 @@ a {
 /*Hero*/
 
 .hero {
-    padding-top: 186px;
-    padding-bottom: 186px;
+    padding: 188px 0;
     background-color: var(--secondary-color);
 }
 
 .hero-title {
     margin: 0 auto 48px auto;
-    width: 496px;
+    max-width: 496px;
     color: var(--primary-white-color);
     text-align: center;
 
@@ -192,8 +191,11 @@ a {
 
 .button {
     display: block;
+    min-width: 169px;
+    height: 56px;
     margin: 0 auto;
     padding: 16px 32px;
+    border: 0;
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     color: var(--primary-white-color);
@@ -214,13 +216,13 @@ a {
 
 /*Advantages*/
 
-.advantages {
-    padding-bottom: 0;
-}
-
 .advantages-list {
     display: flex;
     gap: 24px;
+}
+
+.advantages-item {
+    flex-basis: calc(100% - 3 * 24px);
 }
 
 .advantages-title {
@@ -229,9 +231,17 @@ a {
 
 /*Type of activity*/
 
+.activity {
+    padding-top: 0;
+}
+
 .activity-list {
     display: flex;
     gap: 24px;
+}
+
+.activity-item {
+    flex-basis: calc((100% - 3 * 16px) / 3);
 }
 
 /*Company team*/
@@ -246,17 +256,23 @@ a {
 }
 
 .team-card {
+    flex-basis: calc((100% - 3 * 24px) / 4);
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
     background-color: var(--primary-white-color);
 }
 
 .team-card-description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
     padding: 32px 0;
+}
+
+.team-card-title {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.team-card-text {
+    text-align: center;
 }
 
 /*Footer*/
@@ -267,7 +283,8 @@ a {
 }
 
 .footer-logo {
-    margin-bottom: 18px;
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .footer-text {
@@ -294,9 +311,8 @@ a {
 
 .radio-button .filter {
     padding: 12px 24px;
-    border: 0   ;
+    border: 1px solid #e7e9fc;
     border-radius: 4px;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
     color: var(--active-button-color);
     background-color: var(--secondary-bg-color);
     text-align: center;
@@ -311,6 +327,8 @@ a {
 
 .filter:hover,
 .filter:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
     background-color: var(--active-color);
     color: var(--primary-white-color);
 }
@@ -325,10 +343,6 @@ a {
 
 .portfolio-item {
     margin-bottom: 48px;
-}
-
-.portfolio-item img {
-    display: block;
 }
 
 .portfolio-item:nth-last-child(-n + 3) {
